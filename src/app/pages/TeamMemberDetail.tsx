@@ -64,8 +64,8 @@ export function TeamMemberDetail() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Email</p>
-                    <a href="mailto:consultingdiksha@gmail.com" className="text-brand-600 hover:underline">
-                      consultingdiksha@gmail.com
+                    <a href="mailto:iptmnepal@gmail.com" className="text-brand-600 hover:underline">
+                      iptmnepal@gmail.com
                     </a>
                   </div>
                 </div>
@@ -76,8 +76,8 @@ export function TeamMemberDetail() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Phone</p>
-                    <a href="tel:+977-9841707077" className="text-brand-600 hover:underline">
-                      +977-9841707077
+                    <a href="tel:+977 974-3938733" className="text-brand-600 hover:underline">
+                      +977 974-3938733
                     </a>
                   </div>
                 </div>

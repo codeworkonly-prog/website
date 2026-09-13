@@ -1,15 +1,14 @@
 import { useEffect, useState } from "react";
+import logo from "../../imports/iptm-logo.webp";
 
 const Preloader = () => {
   const [visible, setVisible] = useState(true);
   const [fadeOut, setFadeOut] = useState(false);
 
   useEffect(() => {
-    // Keep preloader visible for a short, smooth period
     const timer = setTimeout(() => {
       setFadeOut(true);
 
-      // Remove completely after fade animation
       setTimeout(() => {
         setVisible(false);
       }, 500);
@@ -28,30 +27,23 @@ const Preloader = () => {
     >
       <div className="flex flex-col items-center">
 
-        {/* DCP Logo */}
-        <div className="flex items-center">
+        {/* IPTM Nepal Logo */}
+        <div className="relative flex items-center justify-center">
+          
+          {/* Subtle rotating ring */}
+          <div className="preloader-ring absolute inset-[-12px] rounded-full" />
 
-          {/* D */}
-          <div className="preloader-box preloader-box-1">
-            <span>D</span>
-          </div>
-
-          {/* C */}
-          <div className="preloader-box preloader-box-2">
-            <span>C</span>
-          </div>
-
-          {/* P */}
-          <div className="preloader-box preloader-box-3">
-            <span>P</span>
-          </div>
-
+          <img
+            src={logo}
+            alt="IPTM Nepal"
+            className="preloader-logo relative z-10 h-32 w-32 object-contain"
+          />
         </div>
 
         {/* Company Name */}
-        <div className="mt-5 overflow-hidden">
+        <div className="mt-7 overflow-hidden">
           <p className="preloader-title">
-            Diksha Consulting &amp; Projects
+            IPTM Nepal
           </p>
         </div>
 

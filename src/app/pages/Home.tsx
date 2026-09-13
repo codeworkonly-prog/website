@@ -78,9 +78,9 @@ export function Home() {
   const getClientPortfolioLink = (clientId: string) =>
     `/portfolio?client=${encodeURIComponent(
       clients.find((client) => client.id === clientId)?.slug ||
-        slugify(
-          clients.find((client) => client.id === clientId)?.name || clientId,
-        ),
+      slugify(
+        clients.find((client) => client.id === clientId)?.name || clientId,
+      ),
     )}`;
 
   return (
@@ -88,25 +88,25 @@ export function Home() {
       <Helmet>
         {/* Basic meta tags — highest SEO priority */}
         <title>
-          Diksha Consulting and Projects | Engineering Consultancy Nepal
+          IPTM Nepal | Your Partner in Professional Capacity Building
         </title>
         <meta
           name="description"
-          content="Diksha Consulting and Projects Pvt. Ltd. is a Nepal-based engineering consultancy specializing in infrastructure development, project management, water supply engineering, structural design, and technical training solutions."
+          content="IPTM Nepal Pvt. Ltd. is your partner in professional capacity building, offering engineering consultancy and infrastructure development services in Nepal."
         />
         <meta name="robots" content="index, follow" />
         <meta
           name="keywords"
           content="engineering consultancy Nepal, infrastructure development Nepal, project management Nepal, structural engineering Nepal, water supply engineering Nepal, DPR consultant Nepal"
         />
-        <link rel="canonical" href="https://www.dikshacp.com.np" />
+        <link rel="canonical" href="https://www.iptmnepal.com" />
 
         {/* Open Graph — for social sharing previews */}
         <meta property="og:type" content="website" />
-        <meta property="og:url" content="https://www.dikshacp.com.np" />
+        <meta property="og:url" content="https://www.iptmnepal.com" />
         <meta
           property="og:title"
-          content="Diksha Consulting and Projects | Engineering Consultancy Nepal"
+          content="IPTM Nepal Pvt. Ltd. | Your Partner in Professional Capacity Building"
         />
         <meta
           property="og:description"
@@ -114,33 +114,38 @@ export function Home() {
         />
         <meta
           property="og:image"
-          content="https://www.dikshacp.com.np/og-image.webp"
+          content="https://iptmnepal.com/og-image.webp"
         />
 
         {/* Structured Data */}
         <script type="application/ld+json">
           {JSON.stringify({
             "@context": "https://schema.org",
-            "@type": "EngineeringCompany",
-            name: "Diksha Consulting and Projects Pvt. Ltd.",
-            url: "https://www.dikshacp.com.np",
-            logo: "https://www.dikshacp.com.np/DCP_logo-1.webp",
-            image: "https://www.dikshacp.com.np/og-image.webp",
+            "@type": "EducationalOrganization",
+            name: "IPTM Nepal",
+            url: "https://iptmnepal.com/",
+            logo: "https://iptmnepal.com/iptm-logo.webp",
+            image: "https://iptmnepal.com/og-image.webp",
             description:
-              "Engineering consultancy and infrastructure development company in Nepal.",
-            telephone: "+977-9841707077",
-            email: "consultingdiksha@gmail.com",
+              "IPTM Nepal is a professional training and capacity-building institute in Nepal, providing professional training, technical events, and organizational development solutions for government and non-government organizations.",
+            telephone: "+977 974-3938733",
+            email: "iptmnepal@gmail.com",
             address: {
               "@type": "PostalAddress",
-              streetAddress: "Ghattekulo-32",
+              streetAddress: "Tripureshwor",
               addressLocality: "Kathmandu",
               addressRegion: "Bagmati Province",
               postalCode: "44600",
               addressCountry: "NP",
             },
-            areaServed: "Nepal",
+            areaServed: {
+              "@type": "Country",
+              name: "Nepal",
+            },
             sameAs: [
-              // add your LinkedIn, Facebook etc.
+              "https://www.instagram.com/iptmnepal/",
+              "https://www.facebook.com/iptmnepal851/",
+              "https://www.youtube.com/@iptmnepal851",
             ],
           })}
         </script>
@@ -204,11 +209,10 @@ export function Home() {
                     <button
                       key={index}
                       onClick={() => heroApi?.scrollTo(index)}
-                      className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer border-0 ${
-                        currentSlide === index
+                      className={`w-3 h-3 rounded-full transition-all duration-300 cursor-pointer border-0 ${currentSlide === index
                           ? "bg-white scale-110"
                           : "bg-white/40 hover:bg-white/60"
-                      }`}
+                        }`}
                       aria-label={`Go to slide ${index + 1}`}
                     />
                   ))}
@@ -235,7 +239,7 @@ export function Home() {
               </h1>
 
               <p className="text-lg md:text-xl mb-6 text-gray-100">
-                Diksha Consulting and Projects Pvt. Ltd. delivers expert
+                IPTM Nepal Pvt. Ltd. delivers expert
                 engineering consultancy, project support, and industry-driven
                 training solutions.
               </p>

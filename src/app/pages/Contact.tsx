@@ -88,7 +88,7 @@ export function Contact() {
       });
 
       const whatsappMessage = `
-Hello Diksha Consulting,
+Hello IPTM Nepal Team,
 
 I would like to contact you regarding:
 

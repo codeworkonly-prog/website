@@ -41,7 +41,7 @@ export function AdminLogin() {
             </div>{" "}
           </div>
           <h1 className="text-2xl font-bold text-gray-900">Admin Portal</h1>
-          <p className="text-gray-600 mt-2">Diksha Consulting and Projects</p>
+          <p className="text-gray-600 mt-2">IPTM Nepal Pvt. Ltd.</p>
         </div>
         {!showResetForm ? (
           <form onSubmit={handleSubmit} className="space-y-6">
@@ -151,7 +151,7 @@ function PasswordResetForm({ onBack }: { onBack: () => void }) {
         {" "}
         <h3 className="text-lg font-semibold mb-2">Reset Password </h3>
         <p className="text-sm text-gray-600">
-          Enter your Firebase admin email.
+          Enter your IPTM Nepal admin email.
         </p>
       </div>
       {message && (

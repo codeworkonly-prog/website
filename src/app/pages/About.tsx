@@ -29,7 +29,7 @@ export function About() {
           backgroundPosition: "center center",
           backgroundRepeat: "no-repeat",
         }}
-        aria-label="About Diksha Consulting engineering team in Nepal"
+        aria-label="About IPTM Nepal team in Nepal"
       >
         {/* Dark Overlay */}
         <div className="absolute inset-0 bg-black/55"></div>
@@ -81,25 +81,17 @@ export function About() {
             <div>
               {/* Heading */}
               <h2 className="text-4xl md:text-5xl font-extrabold leading-tight text-gray-800 mb-6">
-                Building Nepal’s Future Through
-                <span className="text-brand-600"> Engineering Excellence</span>
+                Welcome to
+                <span className="text-brand-600"> IPTM Nepal</span>
               </h2>
 
               {/* Description */}
               <p className="text-lg text-gray-600 leading-relaxed mb-6">
-                Diksha Consulting & Training Pvt. Ltd. is a leading multidisciplinary
-                engineering consulting and professional training company based in
-                Kathmandu, Nepal. We specialize in infrastructure planning, project
-                management, civil engineering consultancy, construction supervision,
-                feasibility studies, DPR preparation, and technical capacity-building
-                programs for public and private sector organizations.
+                We are professional training institute dedicated to organizing various capacity building activities, training, technical events for Govt. & Non Govt org in Nepal.
               </p>
 
               <p className="text-lg text-gray-600 leading-relaxed mb-8">
-                From road and bridge engineering to water supply, urban development,
-                hydropower support, and engineering training, we deliver innovative,
-                sustainable, and practical solutions that contribute to Nepal’s
-                long-term development and infrastructure growth.
+                We provide our customers tools and techniques they need to become more effective and deliver solutions that meet organization needs and offer advice on organizational and people development issues to our customers.
               </p>
 
               {/* Feature Points */}
@@ -150,7 +142,7 @@ export function About() {
 
                 <img
                   src={aboutUs}
-                  alt="Diksha Consulting engineering team in Nepal"
+                  alt="IPTM Nepal team"
                   className="w-full h-full object-cover"
                 />
 
@@ -284,7 +276,7 @@ export function About() {
             </div>
           ) : (
             <>
-                {/* Leadership Member - Center Highlight */}
+              {/* Leadership Member - Center Highlight */}
               {leadershipMember && (
                 <div className="max-w-2xl mx-auto mb-16">
                   <Link to={`/team/${leadershipMember.slug}`}>

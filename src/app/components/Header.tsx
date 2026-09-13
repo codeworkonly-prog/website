@@ -3,7 +3,7 @@ import { Mail, Menu, X } from 'lucide-react';
 import { useState } from 'react';
 import { useContent } from '../contexts/ContentContext';
 import { SiInstagram, SiFacebook, SiYoutube, SiTiktok, SiX } from 'react-icons/si';
-import logoImage from '../../imports/DCP_logo-1.webp';
+import logoImage from '../../imports/iptm-logo.webp';
 
 export function Header() {
   const location = useLocation();
