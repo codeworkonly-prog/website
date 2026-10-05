@@ -25,7 +25,7 @@ import { PortfolioFilters as PortfolioFiltersComponent } from '../components/por
 import { PageHeroBackground } from '../components/PageHeroBackground';
 
 const PAGE_SIZE = 10;
-const COMPANY_START_BS_YEAR = 2072;
+const COMPANY_START_BS_YEAR = 2067;
 const NEPALI_NEW_YEAR_MONTH_INDEX = 3;
 const NEPALI_NEW_YEAR_DAY = 14;
 

@@ -55,31 +55,52 @@ export function Training({ pageVariant = "training" }: TrainingProps) {
       topics: event.topics,
       imageUrl: "",
       location: "",
+      mode: undefined as "online" | "physical" | undefined,
+      platform: undefined as string | undefined,
+      venue: undefined as string | undefined,
+      address: undefined as string | undefined,
+      registerLink: undefined as string | undefined,
       sector: undefined as string | undefined,
       fiscalYear: undefined as string | undefined,
       clientId: undefined as string | undefined,
     })),
     ...portfolio
-      .filter((item) => item.type === "training")
+      .filter((item) =>
+        item.type === (isEventsWorkshopsPage ? "project" : "training"),
+      )
       .map((item) => ({
         id: `portfolio-${item.id}`,
         title: item.title,
         description: item.shortDescription,
         slug: item.slug,
-        type: item.trainingType || "Training",
+        type:
+          item.type === "project"
+            ? item.projectType || "Event / Workshop"
+            : item.trainingType || "Training",
         startDate: item.startDate || item.fiscalYear || "",
         endDate: item.endDate || "",
-        duration: item.mode ? `${item.mode} mode` : "Program",
+        duration: "Program",
         topics: [
           item.sector,
           clients.find((c) => c.id === item.clientId)?.name,
-          item.location,
+          item.venue,
+          item.address || item.location,
         ].filter(Boolean) as string[],
         imageUrl: item.featuredImage,
-        location:
-          item.location ||
-          clients.find((c) => c.id === item.clientId)?.name ||
-          "",
+        mode: item.mode === "online" ? "online" as const : "physical" as const,
+        platform: item.platform,
+        venue: item.venue,
+        address: item.address || item.location,
+        registerLink: item.registerLink,
+        location: item.mode === "online"
+          ? item.platform
+            ? `Online · ${item.platform}`
+            : "Online"
+          : [item.venue, item.address || item.location]
+              .filter(Boolean)
+              .join(", ") ||
+            clients.find((c) => c.id === item.clientId)?.name ||
+            "",
         sector: item.sector,
         fiscalYear: item.fiscalYear,
         clientId: item.clientId,
@@ -259,7 +280,8 @@ export function Training({ pageVariant = "training" }: TrainingProps) {
           ) : view === "grid" ? (
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
               {filteredItems.map((event) => (
-                <Link key={event.id} to={`${eventDetailsPath}/${event.slug}`}>
+                <div key={event.id} className="h-full">
+                  <Link to={`${eventDetailsPath}/${event.slug}`}>
                   <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer h-full group">
                     <div className="relative overflow-hidden">
                       {event.imageUrl ? (
@@ -279,10 +301,15 @@ export function Training({ pageVariant = "training" }: TrainingProps) {
                       </div>
                     </div>
                     <CardContent className="pt-6">
-                      <div className="mb-3">
+                      <div className="mb-3 flex flex-wrap gap-2">
                         <span className="px-3 py-1 bg-brand-100 text-brand-600 text-xs rounded-full font-medium capitalize">
-                          {event.duration}
+                          {event.mode ? `${event.mode} training` : event.duration}
                         </span>
+                        {event.platform && (
+                          <span className="px-3 py-1 bg-slate-100 text-slate-700 text-xs rounded-full font-medium">
+                            {event.platform}
+                          </span>
+                        )}
                       </div>
                       <h3 className="font-semibold text-xl mb-2 group-hover:text-brand-600 transition-colors">
                         {event.title}
@@ -324,7 +351,18 @@ export function Training({ pageVariant = "training" }: TrainingProps) {
                       </div>
                     </CardContent>
                   </Card>
-                </Link>
+                  </Link>
+                  {event.registerLink && (
+                    <a
+                      href={event.registerLink}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-3 inline-block text-sm font-semibold text-brand-600 hover:text-brand-700"
+                    >
+                      Register
+                    </a>
+                  )}
+                </div>
               ))}
             </div>
           ) : (

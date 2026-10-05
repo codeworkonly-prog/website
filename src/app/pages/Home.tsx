@@ -30,7 +30,7 @@ import { Helmet } from "react-helmet-async";
 import { slugify } from "../../utils/slug";
 
 const portfolioTypeLabels: Record<PublicPortfolioType, string> = {
-  project: "Project",
+  project: "Events & Workshops",
   training: "Training",
 };
 const FEATURED_WORK_SCROLL_DURATION = 80_000;
@@ -150,7 +150,7 @@ export function Home() {
   };
 
   const getPortfolioLink = (item: PublicPortfolioItem) => {
-    if (item.type === "project") return `/projects/${item.slug}`;
+    if (item.type === "project") return `/events-workshops/${item.slug}`;
     return `/training/${item.slug}`;
   };
 
@@ -482,7 +482,13 @@ export function Home() {
                         </p>
                         <p className="flex items-start gap-2">
                           <MapPin className="mt-0.5 size-4 shrink-0 text-brand-600" />
-                          <span>{training.location || "Location to be announced"}</span>
+                          <span>
+                            {training.mode === "online"
+                              ? `Online${training.platform ? ` · ${training.platform}` : ""}`
+                              : [training.venue, training.address || training.location]
+                                  .filter(Boolean)
+                                  .join(", ") || "Location to be announced"}
+                          </span>
                         </p>
                       </div>
 
@@ -499,6 +505,16 @@ export function Home() {
                           View Details
                         </Button>
                       </Link>
+                      {training.registerLink && (
+                        <a
+                          href={training.registerLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="mt-3 inline-flex w-full items-center justify-center rounded-md border border-brand-600 px-4 py-2 font-semibold text-brand-600 transition-colors hover:bg-brand-50"
+                        >
+                          Register
+                        </a>
+                      )}
                     </CardContent>
                   </Card>
                 ))}
