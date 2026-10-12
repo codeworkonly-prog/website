@@ -309,39 +309,14 @@ export function Home() {
           <div className="relative z-[2] max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full">
             <div className="max-w-3xl">
               <h1 className="text-5xl md:text-6xl font-bold mb-6 leading-tight">
-                Capacity Building Company in Nepal
+                Professional Training & Capacity Building in Nepal
               </h1>
 
               <p className="text-lg md:text-xl mb-6 text-gray-100">
-                IPTM Nepal delivers expert capacity building, project support, and industry-driven
-                training solutions.
-              </p>
-
-              <p className="text-lg md:text-xl mb-8 text-gray-200">
-                We empower organizations and professionals through practical training and capacity-building solutions, delivered by experienced trainers to drive professional growth, organizational performance, and lasting impact.
+               IPTM Nepal is a professional training and consulting institute providing expert-led training, institutional capacity building, research, and consulting services for professionals and organizations across Nepal.
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4">
-                <Link to="/about">
-                  <Button
-                    size="lg"
-                    className="
-        w-full sm:w-auto
-        px-6 py-2
-        rounded-full
-        bg-white/10
-        hover:bg-white/20
-        text-white
-        border border-white/30
-        transition-all duration-300
-        backdrop-blur-sm
-        cursor-pointer
-      "
-                  >
-                    Learn More
-                  </Button>
-                </Link>
-
                 <Link to="/portfolio">
                   <Button
                     size="lg"
@@ -358,84 +333,34 @@ export function Home() {
         cursor-pointer
       "
                   >
-                    View Portfolio
+                    Explore Our Portfolio
+                  </Button>
+                </Link>
+                 <Link to="/contact">
+                  <Button
+                    size="lg"
+                    className="
+        w-full sm:w-auto
+        px-6 py-2
+        rounded-full
+        bg-white/10
+        hover:bg-white/20
+        text-white
+        border border-white/30
+        transition-all duration-300
+        backdrop-blur-sm
+        cursor-pointer
+      "
+                  >
+                    Contact Us
                   </Button>
                 </Link>
               </div>
             </div>
           </div>
         </section>
-
-        {/* Services Section */}
-        <section className="py-16 bg-gray-50">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-            <div className="text-center mb-12">
-              <h2 className="text-3xl font-bold mb-4">Why Choose Us</h2>
-            </div>
-
-            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-              <Card>
-                <CardContent className="pt-6">
-                  <div className="flex flex-col items-center text-center">
-                    <div className="bg-brand-100 p-3 rounded-full mb-4">
-                      <Award className="h-8 w-8 text-brand-600" />
-                    </div>
-                    <h3 className="font-semibold mb-2">Proven Track Record</h3>
-                    <p className="text-sm text-gray-600">
-                      100+ successful projects delivered across Nepal
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardContent className="pt-6">
-                  <div className="flex flex-col items-center text-center">
-                    <div className="bg-brand-100 p-3 rounded-full mb-4">
-                      <Users className="h-8 w-8 text-brand-600" />
-                    </div>
-                    <h3 className="font-semibold mb-2">
-                      Multidisciplinary Expertise
-                    </h3>
-                    <p className="text-sm text-gray-600">
-                      All engineering and management services under one roof
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardContent className="pt-6">
-                  <div className="flex flex-col items-center text-center">
-                    <div className="bg-brand-100 p-3 rounded-full mb-4">
-                      <CheckCircle className="h-8 w-8 text-brand-600" />
-                    </div>
-                    <h3 className="font-semibold mb-2">Quality Standards</h3>
-                    <p className="text-sm text-gray-600">
-                      Strong understanding of local and international standards
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-
-              <Card>
-                <CardContent className="pt-6">
-                  <div className="flex flex-col items-center text-center">
-                    <div className="bg-brand-100 p-3 rounded-full mb-4">
-                      <Lightbulb className="h-8 w-8 text-brand-600" />
-                    </div>
-                    <h3 className="font-semibold mb-2">Client Satisfaction</h3>
-                    <p className="text-sm text-gray-600">
-                      Commitment to quality, timeliness, and client satisfaction
-                    </p>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-          </div>
-        </section>
-
-        {upcomingTrainingItems.length > 0 && (
+        
+{upcomingTrainingItems.length > 0 && (
           <section className="bg-gray-50 py-16">
             <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
               <div className="mb-10 text-center">
@@ -529,6 +454,75 @@ export function Home() {
           </section>
         )}
 
+        {/* Services Section */}
+        <section className="py-16 bg-gray-50">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div className="text-center mb-12">
+              <h2 className="text-3xl font-bold mb-4">Why Choose Us</h2>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="bg-brand-100 p-3 rounded-full mb-4">
+                      <Award className="h-8 w-8 text-brand-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2">Proven Track Record</h3>
+                    <p className="text-sm text-gray-600">
+                      100+ successful projects delivered across Nepal
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="bg-brand-100 p-3 rounded-full mb-4">
+                      <Users className="h-8 w-8 text-brand-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2">
+                      Multidisciplinary Expertise
+                    </h3>
+                    <p className="text-sm text-gray-600">
+                      All engineering and management services under one roof
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="bg-brand-100 p-3 rounded-full mb-4">
+                      <CheckCircle className="h-8 w-8 text-brand-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2">Quality Standards</h3>
+                    <p className="text-sm text-gray-600">
+                      Strong understanding of local and international standards
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+
+              <Card>
+                <CardContent className="pt-6">
+                  <div className="flex flex-col items-center text-center">
+                    <div className="bg-brand-100 p-3 rounded-full mb-4">
+                      <Lightbulb className="h-8 w-8 text-brand-600" />
+                    </div>
+                    <h3 className="font-semibold mb-2">Client Satisfaction</h3>
+                    <p className="text-sm text-gray-600">
+                      Commitment to quality, timeliness, and client satisfaction
+                    </p>
+                  </div>
+                </CardContent>
+              </Card>
+            </div>
+          </div>
+        </section>
+
         {/* Featured Work */}
         <section className="py-16">
           <style>{`
@@ -555,7 +549,7 @@ export function Home() {
               <div className="text-center sm:text-left">
                 <h2 className="text-3xl font-bold mb-4">Featured Work</h2>
                 <p className="text-gray-600">
-                  Explore our featured projects.
+                  Explore our training, events, and workshops.
                 </p>
               </div>
               <div
