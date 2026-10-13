@@ -14,7 +14,7 @@ import { formatContractAmount, getPublicPortfolioItems } from "../../services/po
 import { SanitizedHtml } from "../components/ui/sanitized-html";
 
 const typeLabels: Record<PublicPortfolioType, string> = {
-  project: "Project",
+  project: "Events & Workshops",
   training: "Training Program",
 };
 
