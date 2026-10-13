@@ -281,8 +281,11 @@ export function Training({ pageVariant = "training" }: TrainingProps) {
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mt-8">
               {filteredItems.map((event) => (
                 <div key={event.id} className="h-full">
-                  <Link to={`${eventDetailsPath}/${event.slug}`}>
-                  <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 cursor-pointer h-full group">
+                  <Card className="overflow-hidden hover:shadow-xl transition-all duration-300 hover:-translate-y-1 h-full group">
+                    <Link
+                      to={`${eventDetailsPath}/${event.slug}`}
+                      className="flex flex-1 flex-col cursor-pointer"
+                    >
                     <div className="relative overflow-hidden">
                       {event.imageUrl ? (
                         <img
@@ -350,18 +353,24 @@ export function Training({ pageVariant = "training" }: TrainingProps) {
                         <ArrowRight className="h-4 w-4 group-hover:translate-x-1 transition-transform" />
                       </div>
                     </CardContent>
-                  </Card>
                   </Link>
                   {event.registerLink && (
-                    <a
-                      href={event.registerLink}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="mt-3 inline-block text-sm font-semibold text-brand-600 hover:text-brand-700"
-                    >
-                      Register
-                    </a>
+                    <CardContent className="pt-0">
+                      <Button
+                        asChild
+                        className="w-full bg-brand-600 text-white hover:bg-brand-700"
+                      >
+                        <a
+                          href={event.registerLink}
+                          target="_blank"
+                          rel="noopener noreferrer"
+                        >
+                          Register
+                        </a>
+                      </Button>
+                    </CardContent>
                   )}
+                  </Card>
                 </div>
               ))}
             </div>
