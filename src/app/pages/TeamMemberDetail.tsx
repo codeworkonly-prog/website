@@ -7,8 +7,10 @@ import { ArrowLeft, Mail, Phone } from 'lucide-react';
 export function TeamMemberDetail() {
   const { slug } = useParams<{ slug: string }>();
   const navigate = useNavigate();
-  const { teamMembers } = useContent();
+  const { contactInfo, teamMembers } = useContent();
   const member = teamMembers.find((m) => m.slug === slug);
+  const email = contactInfo?.email || "";
+  const phone = contactInfo?.phone || "";
 
   if (!member) {
     return (
@@ -64,8 +66,8 @@ export function TeamMemberDetail() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Email</p>
-                    <a href="mailto:iptmnepal@gmail.com" className="text-brand-600 hover:underline">
-                      iptmnepal@gmail.com
+                    <a href={`mailto:${email}`} className="text-brand-600 hover:underline">
+                      {email}
                     </a>
                   </div>
                 </div>
@@ -76,8 +78,8 @@ export function TeamMemberDetail() {
                   </div>
                   <div>
                     <p className="text-sm text-gray-500">Phone</p>
-                    <a href="tel:+977-9841707077" className="text-brand-600 hover:underline">
-                      +977-9843712345
+                    <a href={`tel:${phone}`} className="text-brand-600 hover:underline">
+                      {phone}
                     </a>
                   </div>
                 </div>
