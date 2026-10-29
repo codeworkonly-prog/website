@@ -221,7 +221,7 @@ export function PortfolioForm() {
   const fiscalYearOptions = useMemo(() => {
     const years = new Set<string>();
 
-    for (let year = 2070; year <= 2085; year++) {
+    for (let year = 2065; year <= 2085; year++) {
       years.add(`${year}/${String((year + 1) % 100).padStart(2, "0")}`);
     }
 
